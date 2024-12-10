@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Promotion Eligibility</title>
+</head>
+<body>
+    <h1>Check Promotion Eligibility</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Am I Eligible for Promotion?</button>
+    </form>
+
+    {% if eligibility is not None %}
+        <h2>Eligibility: {{ eligibility }}</h2>
+    {% endif %}
+</body>
+</html>
